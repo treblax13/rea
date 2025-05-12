@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva de REA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Roboto Slab', serif;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Guía Interactiva de Recursos Educativos Abiertos (REA)</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in">Descubre qué son los REA, cómo aprovecharlos y dónde encontrarlos. Una guía práctica e interactiva para aprender, compartir y participar.</p>
+            <div class="flex flex-wrap justify-center gap-4 animate-fade-in">
+                <a href="#que-son" class="btn-primary px-6 py-3 rounded-full font-semibold text-white">Comenzar</a>
+                <a href="#repositorios" class="bg-white px-6 py-3 rounded-full font-semibold text-indigo-600 hover:bg-gray-100 transition">Ver repositorios</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex flex-wrap justify-center md:justify-between items-center">
+                <div class="text-indigo-600 font-bold text-xl mb-4 md:mb-0">Guía REA</div>
+                <div class="flex flex-wrap gap-1 md:gap-4">
+                    <a href="#que-son" class="px-3 py-2 rounded hover:bg-indigo-50 text-gray-700 hover:text-indigo-600">¿Qué son?</a>
+                    <a href="#tipos" class="px-3 py-2 rounded hover:bg-indigo-50 text-gray-700 hover:text-indigo-600">Tipos</a>
+                    <a href="#beneficios" class="px-3 py-2 rounded hover:bg-indigo-50 text-gray-700 hover:text-indigo-600">Beneficios</a>
+                    <a href="#ejemplos" class="px-3 py-2 rounded hover:bg-indigo-50 text-gray-700 hover:text-indigo-600">Ejemplos</a>
+                    <a href="#repositorios" class="px-3 py-2 rounded hover:bg-indigo-50 text-gray-700 hover:text-indigo-600">Repositorios</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- ¿Qué son los REA? -->
+        <section id="que-son" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">¿Qué son los Recursos Educativos Abiertos (REA)?</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl card-hover transition duration-300">
+                <div class="md:flex">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold mb-2">Definición</div>
+                        <p class="mt-2 text-gray-600 text-lg">
+                            Los Recursos Educativos Abiertos (REA) son materiales de enseñanza, aprendizaje e investigación en cualquier medio que residen en el dominio público o que han sido liberados bajo una licencia de propiedad intelectual que permite su uso gratuito y su reutilización, modificación y distribución.
+                        </p>
+                        
+                        <div class="mt-6 bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-500">
+                            <p class="italic text-gray-700">
+                                "Los REA son clave para lograr el acceso universal a la educación de calidad, no solo como una cuestión de justicia social, sino también como un medio para promover los derechos humanos, la capacidad de desarrollo y la innovación."
+                            </p>
+                            <p class="mt-2 font-semibold text-indigo-600">- UNESCO</p>
+                        </div>
+                        
+                        <div class="accordion mt-6">
+                            <button class="accordion-btn flex items-center justify-between w-full px-4 py-3 bg-gray-100 rounded-lg font-semibold text-left text-indigo-700 hover:bg-gray-200 transition">
+                                <span>Leer más sobre REA</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                            <div class="accordion-content px-4">
+                                <div class="py-4 text-gray-600">
+                                    <p class="mb-4">Los REA incluyen:</p>
+                                    <ul class="list-disc pl-6 space-y-2">
+                                        <li>Cursos completos y materiales para cursos</li>
+                                        <li>Módulos o unidades de aprendizaje</li>
+                                        <li>Libros de texto y guías de estudio</li>
+                                        <li>Videos, imágenes y otros medios multimedia</li>
+                                        <li>Software educativo y herramientas</li>
+                                        <li>Otros materiales utilizados para apoyar el acceso al conocimiento</li>
+                                    </ul>
+                                    <p class="mt-4">La filosofía de los REA se basa en la creencia de que el conocimiento es un bien público y que la tecnología en general, e Internet en particular, ofrecen una oportunidad extraordinaria para que todos compartan, utilicen y aprovechen el conocimiento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipos de REA -->
+        <section id="tipos" class="mb-20 py-12 section-divider">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">Tipos de Recursos Educativos Abiertos</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Los REA abarcan una amplia variedad de formatos y recursos que pueden adaptarse a diferentes necesidades educativas.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Acordeón de tipos -->
+                <div class="accordion bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <button class="accordion-btn flex items-center justify-between w-full px-6 py-4 bg-indigo-600 text-white rounded-t-lg font-semibold text-left hover:bg-indigo-700 transition">
+                        <div class="flex items-center">
+                            <i class="fas fa-book-open mr-3"></i>
+                            <span>Textos y Libros de Texto Abiertos</span>
+                        </div>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600">
+                            <p>Libros de texto, manuales, artículos y otros materiales escritos que han sido publicados con licencias abiertas. Estos recursos pueden ser utilizados, adaptados y redistribuidos libremente.</p>
+                            <p class="mt-2 font-semibold text-indigo-600">Ejemplos:</p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>OpenStax - Libros de texto universitarios gratuitos</li>
+                                <li>LibreTexts - Biblioteca colaborativa de textos abiertos</li>
+                                <li>Proyecto Gutenberg - Libros clásicos de dominio público</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <button class="accordion-btn flex items-center justify-between w-full px-6 py-4 bg-indigo-600 text-white font-semibold text-left hover:bg-indigo-700 transition">
+                        <div class="flex items-center">
+                            <i class="fas fa-video mr-3"></i>
+                            <span>Videos y Multimedia Educativos</span>
+                        </div>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600">
+                            <p>Contenido audiovisual educativo que cubre diversos temas y niveles, desde explicaciones breves hasta cursos completos en formato video.</p>
+                            <p class="mt-2 font-semibold text-indigo-600">Ejemplos:</p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>Khan Academy - Videos educativos sobre múltiples materias</li>
+                                <li>TED-Ed - Lecciones animadas sobre diversos temas</li>
+                                <li>MIT OpenCourseWare - Conferencias grabadas de cursos del MIT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <button class="accordion-btn flex items-center justify-between w-full px-6 py-4 bg-indigo-600 text-white font-semibold text-left hover:bg-indigo-700 transition">
+                        <div class="flex items-center">
+                            <i class="fas fa-laptop-code mr-3"></i>
+                            <span>Software y Herramientas Educativas</span>
+                        </div>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600">
+                            <p>Aplicaciones, plataformas y herramientas digitales diseñadas para apoyar el proceso educativo, disponibles con licencias abiertas.</p>
+                            <p class="mt-2 font-semibold text-indigo-600">Ejemplos:</p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>Moodle - Sistema de gestión de aprendizaje de código abierto</li>
+                                <li>GIMP - Alternativa gratuita a Photoshop</li>
+                                <li>LibreOffice - Suite ofimática gratuita y de código abierto</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <button class="accordion-btn flex items-center justify-between w-full px-6 py-4 bg-indigo-600 text-white font-semibold text-left hover:bg-indigo-700 transition">
+                        <div class="flex items-center">
+                            <i class="fas fa-graduation-cap mr-3"></i>
+                            <span>Cursos Abiertos (MOOC)</span>
+                        </div>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600">
+                            <p>Cursos masivos en línea abiertos que ofrecen acceso gratuito a contenidos educativos de instituciones reconocidas.</p>
+                            <p class="mt-2 font-semibold text-indigo-600">Ejemplos:</p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>edX - Cursos de universidades como Harvard y MIT</li>
+                                <li>Coursera - Cursos de instituciones educativas líderes</li>
+                                <li>FutureLearn - Plataforma de aprendizaje social</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <button class="accordion-btn flex items-center justify-between w-full px-6 py-4 bg-indigo-600 text-white rounded-b-lg font-semibold text-left hover:bg-indigo-700 transition">
+                        <div class="flex items-center">
+                            <i class="fas fa-images mr-3"></i>
+                            <span>Imágenes, Audio y Otros Recursos</span>
+                        </div>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 text-gray-600">
+                            <p>Bancos de imágenes, música, efectos de sonido y otros recursos multimedia con licencias que permiten su uso educativo.</p>
+                            <p class="mt-2 font-semibold text-indigo-600">Ejemplos:</p>
+                            <ul class="list-disc pl-6 mt-2 space-y-1">
+                                <li>Unsplash - Fotografías de alta calidad libres de derechos</li>
+                                <li>Freesound - Banco de efectos de sonido y audio</li>
+                                <li>Wikimedia Commons - Archivo multimedia de uso libre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section id="beneficios" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">Beneficios de usar REA</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Los Recursos Educativos Abiertos ofrecen ventajas significativas para todos los actores del proceso educativo.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Para Docentes</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Acceso a materiales de alta calidad sin costo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Posibilidad de adaptar recursos a necesidades específicas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Reducción en tiempo de preparación de clases</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Oportunidad de colaborar con colegas globalmente</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tarjeta 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-user-graduate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Para Estudiantes</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Acceso gratuito a materiales de aprendizaje</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Flexibilidad para aprender a su propio ritmo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Oportunidad de acceder a recursos de instituciones prestigiosas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Posibilidad de complementar su educación formal</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tarjeta 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-university text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Para Instituciones</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Reducción de costos en materiales educativos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Mejora en la calidad de la enseñanza con recursos actualizados</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Mayor alcance y visibilidad institucional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                            <span>Contribución al movimiento global de educación abierta</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejemplos de uso -->
+        <section id="ejemplos" class="mb-20 py-12 section-divider">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">Ejemplos de uso de REA</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Descubre cómo los REA están transformando la educación en diferentes contextos.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Caso 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-school text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Universidad que adopta libros de texto abiertos</h3>
+                        <p class="text-gray-600 mb-4">La Universidad de Minnesota implementó un programa de libros de texto abiertos que ha ahorrado a los estudiantes más de $1 millón en costos de materiales en solo tres años.</p>
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <p class="text-indigo-700 font-semibold">Impacto:</p>
+                            <p class="text-gray-600">87% de los estudiantes reportaron mejor acceso a los materiales y 65% mejor desempeño académico.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-globe-americas text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Escuelas rurales con acceso a recursos de calidad</h3>
+                        <p class="text-gray-600 mb-4">En zonas rurales de Colombia, docentes han adaptado REA de Khan Academy y otros repositorios para crear planes de estudio localizados sin necesidad de conexión constante a internet.</p>
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <p class="text-indigo-700 font-semibold">Impacto:</p>
+                            <p class="text-gray-600">Mejora del 40% en resultados de matemáticas y ciencias en escuelas participantes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-laptop-medical text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Formación continua para profesionales de la salud</h3>
+                        <p class="text-gray-600 mb-4">Hospitales en Kenia utilizan cursos abiertos de edX y Coursera para capacitar a su personal en nuevas técnicas y protocolos médicos, reduciendo costos de capacitación en un 75%.</p>
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <p class="text-indigo-700 font-semibold">Impacto:</p>
+                            <p class="text-gray-600">Más de 500 profesionales capacitados anualmente con materiales actualizados constantemente.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Caso 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-indigo-600 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-language text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Traducción y localización de recursos</h3>
+                        <p class="text-gray-600 mb-4">Una red global de voluntarios ha traducido más de 10,000 videos educativos de Khan Academy a 50 idiomas, incluyendo lenguas indígenas.</p>
+                        <div class="bg-indigo-50 p-3 rounded-lg">
+                            <p class="text-indigo-700 font-semibold">Impacto:</p>
+                            <p class="text-gray-600">Acceso a educación de calidad para comunidades que antes no tenían materiales en su idioma nativo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Repositorios -->
+        <section id="repositorios" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">Repositorios recomendados de REA</h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Explora estos destacados repositorios donde encontrar recursos educativos abiertos de calidad.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Repositorio 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-book text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">OER Commons</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Una biblioteca pública digital de recursos educativos abiertos, que incluye lecciones, actividades y cursos completos para todos los niveles educativos.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-globe mr-1"></i> oercommons.org
+                            </div>
+                            <a href="https://www.oercommons.org/" target="_blank" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Repositorio 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">MERLOT</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Colección curada de recursos educativos gratuitos en línea, con especial énfasis en materiales para educación superior.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-globe mr-1"></i> merlot.org
+                            </div>
+                            <a href="https://www.merlot.org/" target="_blank" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Repositorio 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-university text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">MIT OpenCourseWare</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Publicación abierta de materiales de cursos del MIT que reflejan casi todo el contenido del plan de estudios de pregrado y posgrado.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-globe mr-1"></i> ocw.mit.edu
+                            </div>
+                            <a href="https://ocw.mit.edu/" target="_blank" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Repositorio 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-chalkboard text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">OpenStax</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Libros de texto universitarios de alta calidad, revisados por pares y completamente gratuitos, que cubren materias desde matemáticas hasta ciencias sociales.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-globe mr-1"></i> openstax.org
+                            </div>
+                            <a href="https://openstax.org/" target="_blank" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Repositorio 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-video text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Khan Academy</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Biblioteca de videos educativos y ejercicios prácticos que cubren matemáticas, ciencias, programación, historia, economía y más.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-globe mr-1"></i> khanacademy.org
+                            </div>
+                            <a href="https://www.khanacademy.org/" target="_blank" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Repositorio 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-globe-americas text-indigo-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Open Education Consortium</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Red global de instituciones educativas y organizaciones comprometidas con el avance de la educación abierta y los REA.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-globe mr-1"></i> oeconsortium.org
+                            </div>
+                            <a href="https://www.oeconsortium.org/" target="_blank" class="btn-primary px-4 py-2 rounded-lg text-sm font-semibold text-white">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl p-8 md:p-12 mb-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Listo para explorar el mundo de los REA?</h2>
+                <p class="text-lg mb-8">Descarga nuestra guía completa en PDF con todos los recursos, consejos y mejores prácticas para aprovechar al máximo los Recursos Educativos Abiertos.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button id="downloadBtn" class="bg-white px-6 py-3 rounded-full font-semibold text-indigo-600 hover:bg-gray-100 transition flex items-center">
+                        <i class="fas fa-file-pdf mr-2"></i> Descargar Guía PDF
+                    </button>
+                    <a href="#que-son" class="border-2 border-white px-6 py-3 rounded-full font-semibold text-white hover:bg-white hover:text-indigo-600 transition">Volver al inicio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Guía REA</h3>
+                    <p class="text-gray-400">Recursos Educativos Abiertos para una educación accesible, flexible y de calidad para todos.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Explorar</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#que-son" class="text-gray-400 hover:text-white transition">¿Qué son los REA?</a></li>
+                        <li><a href="#tipos" class="text-gray-400 hover:text-white transition">Tipos de REA</a></li>
+                        <li><a href="#beneficios" class="text-gray-400 hover:text-white transition">Beneficios</a></li>
+                        <li><a href="#ejemplos" class="text-gray-400 hover:text-white transition">Ejemplos de uso</a></li>
+                        <li><a href="#repositorios" class="text-gray-400 hover:text-white transition">Repositorios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Recursos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.unesco.org/" target="_blank" class="text-gray-400 hover:text-white transition">UNESCO</a></li>
+                        <li><a href="https://creativecommons.org/" target="_blank" class="text-gray-400 hover:text-white transition">Creative Commons</a></li>
+                        <li><a href="https://www.oercommons.org/" target="_blank" class="text-gray-400 hover:text-white transition">OER Commons</a></li>
+                        <li><a href="https://www.oeconsortium.org/" target="_blank" class="text-gray-400 hover:text-white transition">Open Education Consortium</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contacto</h4>
+                    <p class="text-gray-400 mb-4">¿Preguntas o sugerencias sobre esta guía?</p>
+                    <a href="mailto:info@guia-rea.org" class="text-indigo-400 hover:text-indigo-300 transition">info@guia-rea.org</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Guía Interactiva de Recursos Educativos Abiertos. Todos los derechos reservados.</p>
+                <p class="mt-2">Este sitio es un recurso educativo abierto bajo licencia Creative Commons CC BY 4.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Acordeón interactivo
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordion = button.closest('.accordion');
+                const content = accordion.querySelector('.accordion-content');
+                const icon = button.querySelector('i');
+                
+                accordion.classList.toggle('active');
+                
+                if (accordion.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+        
+        // Botón de descarga (simulado)
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            alert('Gracias por tu interés. La guía en PDF se descargará pronto. Mientras tanto, puedes seguir explorando los recursos en esta página.');
+        });
+        
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
